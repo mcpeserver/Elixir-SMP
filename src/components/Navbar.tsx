@@ -7,6 +7,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Copy, Check, Menu, X, ExternalLink } from "lucide-react";
 import { siteConfig } from "../config/site";
+import logo from "../assets/images/logo.jpg";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -59,7 +60,7 @@ export default function Navbar() {
           <a href="#home" className="flex items-center gap-3 group">
             <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-lg overflow-hidden border border-brand-500/30 group-hover:border-brand-400 transition-colors bg-[#130722]">
               <img
-                src="/logo.png"
+                src={logo}
                 alt="ELIXIR SMP Logo"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 referrerPolicy="no-referrer"

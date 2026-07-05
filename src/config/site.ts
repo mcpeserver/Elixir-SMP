@@ -280,6 +280,6 @@ export const siteConfig: SiteConfig = {
     description: "Website resmi informasi komunitas Minecraft Survival ELIXIR SMP. Temukan info IP Java & Bedrock, fitur, peraturan, dan rank donatur resmi.",
     keywords: ["Minecraft", "ELIXIR SMP", "Minecraft Indonesia", "Survival Server", "Minecraft Fantasy", "Java IP", "Bedrock IP", "Minecraft Server"],
     author: "RAN DEV",
-    ogImage: "/og-image.png"
+    ogImage: "/og-image.jpg"
   }
 };

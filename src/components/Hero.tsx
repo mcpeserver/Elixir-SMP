@@ -7,6 +7,8 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Copy, Check, ExternalLink, ChevronDown } from "lucide-react";
 import { siteConfig } from "../config/site";
+import heroBg from "../assets/images/hero-bg.jpg";
+import logo from "../assets/images/logo.jpg";
 
 export default function Hero() {
   const [copied, setCopied] = useState(false);
@@ -29,7 +31,7 @@ export default function Hero() {
       {/* Background Image with Dark Purple Radial Overlay */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/hero-bg.png')" }}
+        style={{ backgroundImage: `url(${heroBg})` }}
       >
         {/* Darkening overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0b0514]/90 via-[#0b0514]/70 to-[#0b0514] z-0" />
@@ -62,7 +64,7 @@ export default function Hero() {
           {/* Floating Logo Element */}
           <div className="w-full h-full rounded-full overflow-hidden border-2 border-brand-500/35 bg-[#120720]/80 p-1 group-hover:border-brand-400 group-hover:scale-102 transition-all duration-500 animate-floating">
             <img
-              src="/logo.png"
+              src={logo}
               alt="ELIXIR SMP Official Logo"
               className="w-full h-full object-cover rounded-full"
               referrerPolicy="no-referrer"

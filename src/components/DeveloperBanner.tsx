@@ -22,7 +22,7 @@ export default function DeveloperBanner() {
             rel="noopener noreferrer"
             className="text-cyan-400 hover:text-cyan-300 transition-colors font-semibold underline decoration-dotted"
           >
-            Hubungi WA
+            Hubungi Saya
           </a>
           <span className="text-slate-600">•</span>
           <a 

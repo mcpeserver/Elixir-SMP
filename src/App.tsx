@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from "react";
+import React, { useEffect } from "react";
 import DeveloperBanner from "./components/DeveloperBanner";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -13,8 +13,16 @@ import Rules from "./components/Rules";
 import Ranks from "./components/Ranks";
 import Community from "./components/Community";
 import Footer from "./components/Footer";
+import logo from "./assets/images/logo.jpg";
 
 export default function App() {
+  useEffect(() => {
+    const favicon = document.querySelector("link[rel='icon']");
+    if (favicon) {
+      favicon.setAttribute("href", logo);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#07030e] text-slate-100 flex flex-col relative">
       {/* Centralized Sticky Header Group */}

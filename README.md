@@ -12,12 +12,12 @@ Di bawah ini adalah aset identitas resmi yang digunakan pada website ini:
 
 ### Official Logo
 <p align="center">
-  <img src="/public/logo.png" width="200" alt="ELIXIR SMP Official Logo" style="border-radius: 50%; box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);" />
+  <img src="/src/assets/images/logo.jpg" width="200" alt="ELIXIR SMP Official Logo" style="border-radius: 50%; box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);" />
 </p>
 
 ### Hero Banner Background
 <p align="center">
-  <img src="/public/hero-bg.png" width="100%" alt="ELIXIR SMP Hero Background Banner" style="border-radius: 12px; border: 1px solid rgba(168, 85, 247, 0.2);" />
+  <img src="/src/assets/images/hero-bg.jpg" width="100%" alt="ELIXIR SMP Hero Background Banner" style="border-radius: 12px; border: 1px solid rgba(168, 85, 247, 0.2);" />
 </p>
 
 ---
@@ -40,12 +40,13 @@ Proyek ini dibangun menggunakan kombinasi pustaka modern berperforma tinggi untu
 ```text
 /
 ├── public/                 # Aset statis publik yang dapat langsung diakses
-│   ├── logo.png            # Logo utama server (Magic Hourglass)
-│   ├── hero-bg.png         # Background megah bertema fantasi ungu
-│   ├── og-image.png        # Gambar pratinjau saat link dibagikan di medsos
 │   ├── favicon.ico         # Icon kecil pada tab browser
 │   └── manifest.webmanifest# Konfigurasi PWA dan metadata perangkat
 ├── src/
+│   ├── assets/
+│   │   └── images/         # Aset gambar resmi proyek
+│   │       ├── logo.jpg    # Logo utama server (Magic Hourglass)
+│   │       └── hero-bg.jpg # Background megah bertema fantasi ungu
 │   ├── components/         # Komponen UI modular
 │   │   ├── DeveloperBanner.tsx # Banner developer RAN DEV di bagian atas
 │   │   ├── Navbar.tsx          # Navigasi sticky responsif dengan tombol salin IP
@@ -114,10 +115,10 @@ Buka file `src/config/site.ts`. Di dalam file tersebut, Anda dapat langsung meng
 - **Tautan Media Sosial** (`links` object) — Masukkan tautan grup WhatsApp, server Discord, dan alamat Linktree Anda sendiri.
 
 ### 2. Mengganti Logo Utama & Gambar Latar
-Jika Anda memiliki logo dan background baru, Anda hanya perlu mengganti file gambarnya di dalam folder `public/`:
-- Pastikan nama dan formatnya tetap sama persis: `logo.png` dan `hero-bg.png`.
-- Resolusi yang disarankan untuk `logo.png` adalah rasio **1:1** (minimal `512x512px`).
-- Resolusi yang disarankan untuk `hero-bg.png` adalah rasio **16:9** (minimal `1920x1080px`).
+Jika Anda memiliki logo dan background baru, Anda hanya perlu mengganti file gambarnya di dalam folder `src/assets/images/`:
+- Pastikan nama dan formatnya tetap sama persis: `logo.jpg` dan `hero-bg.jpg`.
+- Resolusi yang disarankan untuk `logo.jpg` adalah rasio **1:1** (minimal `512x512px`).
+- Resolusi yang disarankan untuk `hero-bg.jpg` adalah rasio **16:9** (minimal `1920x1080px`).
 
 ### 3. Memperbarui Metadata SEO & OpenGraph (Medsos)
 Data metadata juga dapat diatur langsung di dalam objek `seo` pada file `src/config/site.ts`. Ganti `title`, `description`, dan `keywords` sesuai target kata kunci pencarian Anda di Google.
