@@ -139,33 +139,51 @@ export const siteConfig: SiteConfig = {
   rules: [
     {
       id: 1,
-      title: "Dilarang Griefing",
-      description: "Dilarang merusak, mencuri, atau memodifikasi bangunan dan barang milik pemain lain tanpa izin tertulis dari pemiliknya.",
-      iconName: "XCircle"
+      title: "Dilarang Toxic Berlebihan",
+      description: "Jaga tata krama dalam berkomunikasi. Saling menghormati sesama pemain dan dilarang toxic berlebihan di dalam chat.",
+      iconName: "MessageSquareOff"
     },
     {
       id: 2,
-      title: "Dilarang Curang (Cheating)",
-      description: "Penggunaan klien kustom, mod ilegal, x-ray, eksploitasi bug, atau segala bentuk kecurangan lainnya sangat dilarang keras.",
-      iconName: "ZapOff"
+      title: "Dilarang Griefing",
+      description: "Dilarang keras merusak, menghancurkan, atau mencuri barang dan bangunan milik pemain lain di area mana pun.",
+      iconName: "XCircle"
     },
     {
       id: 3,
-      title: "Saling Menghormati",
-      description: "Hormati sesama pemain dan staf server. Dilarang melakukan pelecehan, toksisitas berlebihan, ujaran kebencian, rasisme, atau provokasi.",
-      iconName: "Smile"
+      title: "Dilarang Share Link",
+      description: "Jangan membagikan tautan (link) tidak dikenal, phising, atau tautan berbahaya demi keamanan seluruh member server.",
+      iconName: "Link2Off"
     },
     {
       id: 4,
-      title: "Voice Chat Bijak",
-      description: "Gunakan fitur Proximity Voice Chat dengan sopan. Dilarang memutar suara bising, melakukan spam suara, atau mengganggu kenyamanan pemain.",
-      iconName: "VolumeX"
+      title: "Dilarang Promosi",
+      description: "Dilarang mempromosikan server Minecraft lain, produk luar, atau media sosial pribadi tanpa izin resmi dari admin.",
+      iconName: "Megaphone"
     },
     {
       id: 5,
-      title: "Dilarang Spam / Promosi",
-      description: "Dilarang melakukan spam chat, promosi server Minecraft lain, promosi produk eksternal, atau menyebarkan tautan berbahaya di dalam server.",
-      iconName: "MessageSquareOff"
+      title: "Dilarang Menggunakan Cheat",
+      description: "Dilarang keras menggunakan cheat (Hack Client, X-Ray mod, auto-clicker, exploit bug, atau modifikasi ilegal lainnya).",
+      iconName: "ZapOff"
+    },
+    {
+      id: 6,
+      title: "Dilarang Bahas 18+",
+      description: "Menjaga kebersihan chat komunitas. Segala bentuk pembahasan berunsur dewasa (18+) sangat dilarang keras.",
+      iconName: "ShieldAlert"
+    },
+    {
+      id: 7,
+      title: "Dilarang Rasis",
+      description: "Dilarang keras rasisme, SARA, diskriminasi, bullying, atau menyinggung latar belakang fisik dan ras pemain lain.",
+      iconName: "Ban"
+    },
+    {
+      id: 8,
+      title: "Dilarang Drama",
+      description: "Kalo ada masalah pribadi ya diselesaikan secara pribadi saja, tidak usah dibawa-bawa ke grup komunitas atau chat publik.",
+      iconName: "AlertTriangle"
     }
   ],
   
@@ -260,9 +278,9 @@ export const siteConfig: SiteConfig = {
   ],
   
   links: {
-    website: "https://play.elixirsmp.xyz",
-    discord: "https://discord.gg/elixirsmp",
-    whatsappGroup: "https://chat.whatsapp.com/elixirsmp",
+    website: "https://linktr.ee/elixirsmp",
+    discord: "https://discord.gg/mnEHVB8tt4",
+    whatsappGroup: "https://linktr.ee/elixirsmp",
     whatsappContact: "https://wa.me/6283837742780",
     linktree: "https://linktr.ee/elixirsmp"
   },
