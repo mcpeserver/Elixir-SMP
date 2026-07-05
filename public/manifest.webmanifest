@@ -1,0 +1,16 @@
+{
+  "name": "ELIXIR SMP",
+  "short_name": "ELIXIR SMP",
+  "description": "Landing Page Informasi Resmi ELIXIR SMP - Minecraft Survival Purple Fantasy Server",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0614",
+  "theme_color": "#6d28d9",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
