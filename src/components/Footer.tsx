@@ -6,9 +6,14 @@
 import React from "react";
 import { siteConfig } from "../config/site";
 import { Heart, ShieldCheck } from "lucide-react";
+import logo from "../assets/images/logo.jpg";
+import { useDeveloper } from "../context/DeveloperContext";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { config } = useDeveloper();
+
+  const whatsappUrl = `https://wa.me/62${config.contact.whatsapp.replace(/^0/, "")}`;
 
   return (
     <footer className="bg-[#06020d] border-t border-brand-500/10 py-12 px-4 relative overflow-hidden">
@@ -21,7 +26,7 @@ export default function Footer() {
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-lg overflow-hidden border border-brand-500/20 bg-[#12071f]">
             <img 
-              src="/logo.png" 
+              src={logo} 
               alt="ELIXIR SMP Logo" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
@@ -47,16 +52,16 @@ export default function Footer() {
         {/* Right Side: Developer Watermark & Contacts */}
         <div className="flex flex-col items-center md:items-end gap-1.5 text-center md:text-right">
           <div className="flex items-center gap-1.5 text-xs text-slate-400 font-medium">
-            <span>{siteConfig.developer.footerText}</span>
+            <span>Website dikembangkan oleh <strong className="text-white">{config.name}</strong> • WhatsApp {config.contact.phone}</span>
           </div>
           <a
-            href={siteConfig.developer.whatsappUrl}
+            href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-[10px] font-bold font-mono text-cyan-400 hover:text-cyan-300 transition-colors uppercase tracking-wider bg-cyan-950/20 border border-cyan-500/15 px-2.5 py-0.5 rounded-full hover:shadow-[0_0_10px_rgba(34,211,238,0.15)] flex items-center gap-1"
           >
             <ShieldCheck size={11} />
-            <span>KONTAK RAN DEV</span>
+            <span>KONTAK {config.name.toUpperCase()}</span>
           </a>
         </div>
 
@@ -64,3 +69,4 @@ export default function Footer() {
     </footer>
   );
 }
+

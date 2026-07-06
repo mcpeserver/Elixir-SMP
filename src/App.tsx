@@ -14,6 +14,7 @@ import Ranks from "./components/Ranks";
 import Community from "./components/Community";
 import Footer from "./components/Footer";
 import logo from "./assets/images/logo.jpg";
+import { DeveloperProvider } from "./context/DeveloperContext";
 
 export default function App() {
   useEffect(() => {
@@ -24,27 +25,30 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#07030e] text-slate-100 flex flex-col relative">
-      {/* Centralized Sticky Header Group */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex flex-col pointer-events-none">
-        <div className="pointer-events-auto">
-          <DeveloperBanner />
-          <Navbar />
-        </div>
-      </header>
+    <DeveloperProvider>
+      <div className="min-h-screen bg-[#07030e] text-slate-100 flex flex-col relative">
+        {/* Centralized Sticky Header Group */}
+        <header className="fixed top-0 left-0 right-0 z-50 flex flex-col pointer-events-none">
+          <div className="pointer-events-auto">
+            <DeveloperBanner />
+            <Navbar />
+          </div>
+        </header>
 
-      {/* Main Sections */}
-      <main className="flex-grow">
-        <Hero />
-        <ServerInfo />
-        <Features />
-        <Rules />
-        <Ranks />
-        <Community />
-      </main>
+        {/* Main Sections */}
+        <main className="flex-grow">
+          <Hero />
+          <ServerInfo />
+          <Features />
+          <Rules />
+          <Ranks />
+          <Community />
+        </main>
 
-      {/* Footer */}
-      <Footer />
-    </div>
+        {/* Footer */}
+        <Footer />
+      </div>
+    </DeveloperProvider>
   );
 }
+
