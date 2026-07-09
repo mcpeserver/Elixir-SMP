@@ -1,58 +1,24 @@
-# Panduan Kontribusi ELIXIR SMP Landing Page
+# Panduan Berkontribusi — OZI STAR SMP Website
 
-Halo! Terima kasih banyak sudah tertarik untuk berkontribusi pada pengembangan **ELIXIR SMP Official Landing Page**. Kontribusi dari pengembang komunitas sangat kami hargai demi kenyamanan, keindahan visual, dan kecepatan performa website ini.
+Kami sangat senang Anda tertarik untuk berkontribusi pada pengembangan website OZI STAR SMP! Berikut adalah panduan langkah demi langkah agar kontribusi Anda berjalan dengan lancar.
 
-Berikut adalah panduan singkat agar proses kolaborasi berjalan lancar:
+## 🌿 Struktur Alur Kerja Git (Branching)
+- `main`: Branch utama yang stabil untuk rilis produksi.
+- `dev`: Branch pengembangan tempat semua fitur diuji sebelum rilis.
+- Buat branch baru untuk setiap fitur atau perbaikan bug:
+  - Fitur: `feature/nama-fitur`
+  - Perbaikan: `bugfix/nama-perbaikan`
 
-## 🛠️ Cara Memulai
+## ⌨️ Coding Style & Standar Kode
+- Gunakan **TypeScript** secara konsisten.
+- Gunakan **Tailwind CSS** untuk semua kebutuhan styling elemen.
+- Komponen visual dibuat secara modular di `/src/components/`.
+- Jangan pernah mengubah API key atau rahasia server secara hardcode.
 
-1. **Fork Repository Ini**
-   Klik tombol "Fork" di pojok kanan atas halaman repository GitHub ini untuk membuat salinan proyek di akun GitHub Anda.
-
-2. **Clone ke Perangkat Lokal**
-   ```bash
-   git clone https://github.com/username/elixir-smp-landing.git
-   cd elixir-smp-landing
-   ```
-
-3. **Instal Seluruh Dependensi**
-   ```bash
-   npm install
-   ```
-
-4. **Buat Branch Baru**
-   Gunakan nama branch yang deskriptif terkait fitur atau perbaikan yang Anda buat:
-   ```bash
-   git checkout -b fitur/nama-fitur-baru
-   # atau
-   git checkout -b perbaikan/perbaiki-bug-copy-ip
-   ```
-
-5. **Lakukan Perubahan**
-   Pastikan Anda menguji kode secara lokal dengan menjalankan `npm run dev` dan memeriksa apakah tidak ada error atau layout yang rusak pada berbagai resolusi layar.
-
-6. **Lakukan Komit & Push**
-   Tulis pesan komit (commit message) yang singkat, jelas, dan menggunakan Bahasa Indonesia yang baik:
-   ```bash
-   git add .
-   git commit -m "Memperbaiki transisi animasi navbar di mobile"
-   git push origin fitur/nama-fitur-baru
-   ```
-
-7. **Ajukan Pull Request (PR)**
-   Buka repository asli kami di GitHub dan klik tombol "Compare & pull request". Jelaskan secara singkat perubahan apa saja yang Anda lakukan dan lampirkan screenshot jika ada perubahan visual.
-
----
-
-## 📐 Standar Penulisan Kode & Desain
-
-- **Gaya Desain:** Pertahankan tema **Purple Fantasy Modern** menggunakan palet warna transparan, border tipis, efek glow ungu lembut, dan backdrop blur (Glassmorphism). Jangan menambahkan warna-warna cerah yang bertabrakan (seperti merah menyala atau kuning neon di luar konteks).
-- **TypeScript:** Selalu tulis kode dengan tipe yang ketat (*Strict Type Safety*). Hindari penggunaan tipe `any`.
-- **Ikon:** Seluruh ikon wajib menggunakan pustaka `lucide-react` demi keseragaman visual.
-- **Data Statis:** Dilarang keras melakukan *hardcoding* data langsung di komponen UI. Segala jenis teks informasi, IP, link, dan daftar harga wajib dibaca secara dinamis dari file konfigurasi tersentralisasi `/src/config/site.ts`.
-
----
-
-Jika Anda memiliki pertanyaan lebih lanjut, Anda dapat membuka diskusi di menu **Issues** atau menghubungi langsung tim pengembang utama **RAN DEV Studio**.
-
-Terima kasih atas dedikasi dan kontribusi Anda! ✨
+## 🤝 Alur Membuat Pull Request (PR)
+1. Fork repositori ini ke akun GitHub Anda.
+2. Buat branch baru dari `dev` atau `main` tergantung konfigurasi terbaru.
+3. Tulis kode Anda dengan komentar yang jelas.
+4. Pastikan aplikasi dapat dikompilasi dengan sukses (`npm run build`).
+5. Buat commit yang deskriptif (misalnya: `feat: menambahkan tombol salin IP otomatis`).
+6. Push perubahan Anda ke repositori hasil fork dan ajukan Pull Request ke branch `dev`.

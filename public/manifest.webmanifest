@@ -1,16 +1,17 @@
 {
-  "name": "ELIXIR SMP",
-  "short_name": "ELIXIR SMP",
-  "description": "Landing Page Informasi Resmi ELIXIR SMP - Minecraft Survival Purple Fantasy Server",
+  "name": "OZI STAR SMP",
+  "short_name": "OZI STAR",
+  "description": "Website Resmi Server Minecraft OZI STAR SMP - Minecraft Survival Economy",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0d0614",
-  "theme_color": "#6d28d9",
+  "background_color": "#F6F8F4",
+  "theme_color": "#67B94A",
   "icons": [
     {
-      "src": "/logo.png",
+      "src": "/src/assets/images/ozi_star_logo_with_bg_1783396111407.jpg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpeg",
+      "purpose": "any maskable"
     }
   ]
 }

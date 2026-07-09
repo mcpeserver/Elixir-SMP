@@ -1,6 +1,6 @@
 {
-  "name": "ELIXIR SMP Official Landing Page",
-  "description": "Landing Page Resmi Komunitas Minecraft Server ELIXIR SMP - Petualangan Survival Purple Fantasy Modern dengan Alkimia, Sihir, dan Kustomisasi Unik.",
+  "name": "OZI STAR SMP Website",
+  "description": "Website Resmi Server Minecraft OZI STAR SMP - Minecraft Survival Economy",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
