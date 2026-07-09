@@ -60,7 +60,7 @@ export function DeveloperProvider({ children }: { children: React.ReactNode }) {
         }
       })
       .catch((err) => {
-        console.error("Error fetching developer config, using defaults:", err);
+        // Silently fall back to default values when external fetch is restricted (e.g. in sandbox or offline mode)
         if (active) {
           setLoading(false);
         }

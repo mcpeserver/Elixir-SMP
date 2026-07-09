@@ -83,7 +83,7 @@ export const siteConfig: SiteConfig = {
   javaIp: "play.elixirsmp.xyz",
   altJavaIp: "elixir.evovoxel.my.id",
   bedrockIp: "play.elixirsmp.xyz",
-  bedrockPort: 25640,
+  bedrockPort: 19260,
   
   features: [
     {

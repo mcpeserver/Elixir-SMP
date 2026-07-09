@@ -8,11 +8,17 @@ import { motion, AnimatePresence } from "motion/react";
 import { Copy, Check, Menu, X, ExternalLink } from "lucide-react";
 import { siteConfig } from "../config/site";
 import logo from "../assets/images/logo.jpg";
+import { useDeveloper } from "../context/DeveloperContext";
+import { useNavigation, PageId } from "../context/NavigationContext";
 
 export default function Navbar() {
+  const { config } = useDeveloper();
+  const { currentPage, setCurrentPage } = useNavigation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+
+  const whatsappUrl = `https://wa.me/62${config.contact.whatsapp.replace(/^0/, "")}`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,13 +42,13 @@ export default function Navbar() {
     }
   };
 
-  const menuItems = [
-    { label: "Beranda", href: "#home" },
-    { label: "Koneksi", href: "#connection" },
-    { label: "Fitur", href: "#features" },
-    { label: "Aturan", href: "#rules" },
-    { label: "Rank", href: "#ranks" },
-    { label: "Komunitas", href: "#community" },
+  const menuItems: { label: string; href: string; pageId: PageId }[] = [
+    { label: "Beranda", href: "#home", pageId: "home" },
+    { label: "Koneksi", href: "#connection", pageId: "connection" },
+    { label: "Fitur", href: "#features", pageId: "features" },
+    { label: "Aturan", href: "#rules", pageId: "rules" },
+    { label: "Rank", href: "#ranks", pageId: "ranks" },
+    { label: "Komunitas", href: "#community", pageId: "community" },
   ];
 
   return (
@@ -57,7 +63,14 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           
           {/* Logo & Brand Name */}
-          <a href="#home" className="flex items-center gap-3 group">
+          <a 
+            href="#home" 
+            onClick={(e) => {
+              e.preventDefault();
+              setCurrentPage("home");
+            }}
+            className="flex items-center gap-3 group"
+          >
             <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-lg overflow-hidden border border-brand-500/30 group-hover:border-brand-400 transition-colors bg-[#130722]">
               <img
                 src={logo}
@@ -73,16 +86,27 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
-            {menuItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-sm font-medium text-slate-300 hover:text-brand-300 transition-colors duration-200 relative py-1 group"
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-400 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            ))}
+            {menuItems.map((item) => {
+              const isActive = currentPage === item.pageId;
+              return (
+                <a
+                  key={item.pageId}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setCurrentPage(item.pageId);
+                  }}
+                  className={`text-sm font-medium transition-colors duration-200 relative py-1 group ${
+                    isActive ? "text-brand-300 font-semibold" : "text-slate-300 hover:text-brand-300"
+                  }`}
+                >
+                  {item.label}
+                  <span className={`absolute bottom-0 left-0 h-0.5 bg-brand-400 transition-all duration-300 ${
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                  }`}></span>
+                </a>
+              );
+            })}
           </div>
 
           {/* Actions Button */}
@@ -154,16 +178,27 @@ export default function Navbar() {
             className="md:hidden w-full bg-[#0d0617]/95 border-b border-brand-500/20 backdrop-blur-lg overflow-hidden"
           >
             <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col">
-              {menuItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-4 py-3 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-brand-600/10 transition-colors"
-                >
-                  {item.label}
-                </a>
-              ))}
+              {menuItems.map((item) => {
+                const isActive = currentPage === item.pageId;
+                return (
+                  <a
+                    key={item.pageId}
+                    href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setCurrentPage(item.pageId);
+                      setMobileMenuOpen(false);
+                    }}
+                    className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                      isActive 
+                        ? "bg-brand-600/20 text-white font-semibold border-l-2 border-brand-400 pl-3.5" 
+                        : "text-slate-300 hover:text-white hover:bg-brand-600/10"
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                );
+              })}
               <div className="grid grid-cols-2 gap-3 pt-4 border-t border-brand-500/10">
                 <button
                   onClick={() => {
@@ -184,6 +219,41 @@ export default function Navbar() {
                   DISCORD
                   <ExternalLink size={12} />
                 </a>
+              </div>
+
+              {/* Partner & Developer Links for Mobile */}
+              <div className="pt-4 mt-2 border-t border-brand-500/10 space-y-2">
+                <span className="text-[10px] tracking-widest font-mono text-slate-500 block uppercase px-2">KEMITRAAN & WEB DEVELOPER</span>
+                <div className="flex flex-col gap-1.5">
+                  <a
+                    href={config.website.portfolio}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-yellow-400 bg-yellow-400/5 hover:bg-yellow-400/10 border border-yellow-400/10 transition-colors"
+                  >
+                    <span>Website Server Lain (Portfolio)</span>
+                    <ExternalLink size={12} className="text-yellow-500/70" />
+                  </a>
+                  
+                  <div className="grid grid-cols-2 gap-2">
+                    <a
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-1.5 py-2 rounded-lg text-xs font-medium text-cyan-400 bg-cyan-400/5 hover:bg-cyan-400/10 border border-cyan-400/10 transition-colors text-center"
+                    >
+                      <span>Hubungi Saya</span>
+                    </a>
+                    <a
+                      href={config.community.discord}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-1.5 py-2 rounded-lg text-xs font-medium text-indigo-400 bg-indigo-400/5 hover:bg-indigo-400/10 border border-indigo-400/10 transition-colors text-center"
+                    >
+                      <span>Komunitas</span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>

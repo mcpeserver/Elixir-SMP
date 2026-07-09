@@ -26,7 +26,7 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 px-4 overflow-hidden bg-[#07030e]"
+      className="relative min-h-screen flex flex-col items-center justify-center pt-24 xs:pt-28 sm:pt-32 md:pt-40 pb-16 md:pb-24 px-4 overflow-hidden bg-[#07030e]"
     >
       {/* Background Image with Dark Purple Radial Overlay */}
       <div 
@@ -81,7 +81,7 @@ export default function Hero() {
           <span className="text-[11px] sm:text-xs tracking-[0.3em] font-mono font-bold text-brand-300 uppercase bg-brand-500/10 border border-brand-500/20 px-3 py-1 rounded-full text-glow">
             {siteConfig.tagline}
           </span>
-          <h1 className="font-display font-extrabold text-5xl sm:text-7xl md:text-8xl tracking-tight text-white mt-4 mb-2 drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)] text-glow">
+          <h1 className="font-display font-extrabold text-4xl xs:text-5xl sm:text-7xl md:text-8xl tracking-tight text-white mt-4 mb-2 drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)] text-glow">
             {siteConfig.name}
           </h1>
         </motion.div>
